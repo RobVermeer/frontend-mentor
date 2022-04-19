@@ -1,0 +1,212 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsl(216, 12%, 54%);
+  --darkBlue: hsl(213, 19%, 18%);
+  --darkerBlue: hsl(213, 19%, 12%);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Overpass', sans-serif;
+  background-color: var(--veryDarkBlue);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--white);
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+p {
+  font-size: 15px;
+  color: var(--lightGrey);
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  height: 100%;
+  padding-inline: 1.5rem;
+  display: grid;
+  place-content: center;
+}
+
+.surface {
+  max-width: 412px;
+  padding: 1.5rem;
+  background-color: var(--darkerBlue);
+  display: grid;
+  grid-gap: 1rem;
+  border-radius: 1rem;
+  grid-area: 1 / 1 / 1 / 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.thank-you {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main.success .rating-form {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.main.success .thank-you {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.centered {
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.star {
+  justify-self: start;
+  background-color: var(--darkBlue);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  border: 0;
+  padding: 0;
+}
+
+.radio {
+  display: inline-block;
+}
+
+.radio input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.radio label {
+  background-color: var(--darkBlue);
+  color: var(--lightGrey);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.radio label:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.radio input:checked + label {
+  background-color: var(--mediumGrey);
+  color: var(--white);
+}
+
+.button {
+  background-color: var(--orange);
+  color: var(--white);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  line-height: 28px;
+  border-radius: 22px;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover,
+.button:active {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.pill {
+  font-style: normal;
+  background-color: var(--darkBlue);
+  color: var(--orange);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  line-height: 1;
+}
+
+.attribution {
+  opacity: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  color: var(--white);
+}
+
+.main.success .attribution {
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
