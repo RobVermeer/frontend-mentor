@@ -1,0 +1,169 @@
+:root {
+  --softBlue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --cyanAlpha: hsl(178, 100%, 50%, 0.6);
+  --veryDarkBlueMain: hsl(217, 54%, 11%);
+  --veryDarkBlueCard: hsl(216, 50%, 16%);
+  --veryDarkBlueLine: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--veryDarkBlueMain);
+  font-family: Outfit, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--softBlue);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  grid-gap: 1rem;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.card {
+  max-width: 325px;
+  background-color: var(--veryDarkBlueCard);
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  display: block;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--cyanAlpha);
+  background-image: url('./images/icon-view.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card-image:hover::after {
+  opacity: 1;
+}
+
+.card-title {
+  color: var(--white);
+  font-size: 22px;
+  margin-top: 20px;
+}
+
+.card-description {
+  margin-top: 10px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+.card-info span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-info .price {
+  color: var(--cyan);
+}
+
+.card-author {
+  border-top: 1px solid var(--veryDarkBlueLine);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 15px;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.card-author img {
+  width: 32px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  opacity: 0;
+  animation: show 0.2s ease-in-out 2s forwards;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
