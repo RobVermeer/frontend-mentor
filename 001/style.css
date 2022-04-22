@@ -162,6 +162,7 @@ a:hover {
   color: var(--white);
 }
 
+.radio input:focus + label,
 .radio input:checked + label {
   background-color: var(--mediumGrey);
   color: var(--white);
