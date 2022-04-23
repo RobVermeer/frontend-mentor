@@ -1,0 +1,216 @@
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --brightBlueAlpha: hsla(245, 75%, 52%, 0.2);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+  --purple: hsl(244, 83%, 68%);
+  --white: hsl(255, 100%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--desaturatedBlue);
+  background-color: var(--paleBlue);
+  background-image: url('./images/pattern-background-mobile.svg');
+  background-repeat: repeat-x;
+  background-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-image: url('./images/pattern-background-desktop.svg');
+    font-size: 16px;
+    animation: wave 4s linear infinite;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  color: var(--darkBlue);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+@media (min-width: 48rem) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+a {
+  color: var(--brightBlue);
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border-bottom: 1px solid var(--brightBlue);
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--purple);
+  border-bottom-color: transparent;
+}
+
+strong {
+  color: var(--darkBlue);
+  font-weight: 900;
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  grid-gap: 1rem;
+  min-height: 100%;
+  padding: 1rem;
+}
+
+.card {
+  max-width: 325px;
+  background-color: var(--white);
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--brightBlueAlpha);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  margin-top: 0.5rem;
+}
+
+.card-description {
+  margin-top: 0.5rem;
+  padding-inline: 2rem;
+}
+
+.card-info {
+  background-color: var(--veryPaleBlue);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 1rem;
+  align-items: center;
+  padding: 15px;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: start;
+}
+
+.card-info a {
+  font-size: 14px;
+}
+
+.card .price {
+  line-height: 1.4;
+}
+
+@media (min-width: 48rem) {
+  .card {
+    max-width: 450px;
+  }
+
+  .card-content {
+    padding: 2rem 3rem;
+  }
+}
+
+.button {
+  font-weight: 700;
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  color: var(--desaturatedBlue);
+  font-size: 14px;
+  line-height: 1rem;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  color: var(--darkBlue);
+}
+
+.button-primary {
+  background-color: var(--brightBlue);
+  color: var(--white);
+  box-shadow: 0 16px 16px var(--brightBlueAlpha);
+}
+
+.button-primary:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.button + .button {
+  margin-top: 0.5rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  opacity: 0;
+  animation: show 0.2s ease-in-out 2s forwards;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+  100% {
+    background-position-x: 859px;
+  }
+}
