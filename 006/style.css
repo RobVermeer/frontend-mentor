@@ -1,0 +1,159 @@
+:root {
+  --brightOrange: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --veryDarkCyan: hsl(179, 100%, 13%);
+  --transparentWhite: hsla(0, 0%, 100%, 0.75);
+  --veryLightGray: hsl(0, 0%, 95%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: var(--veryDarkCyan);
+  background-color: var(--veryLightGray);
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2 {
+  font-family: 'Big Shoulders Display', cursive;
+  color: var(--veryLightGray);
+  font-size: 2.5rem;
+}
+
+a {
+  color: var(--brightOrange);
+}
+
+a:hover {
+  color: var(--darkCyan);
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.cards {
+  color: var(--transparentWhite);
+  margin-block: 4rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+@media (min-width: 48rem) {
+  .cards {
+    display: flex;
+    max-width: 920px;
+  }
+}
+
+.card {
+  --color: var(--brightOrange);
+  padding: 44px 46px;
+  background-color: var(--color);
+}
+
+.card:nth-child(2) {
+  --color: var(--darkCyan);
+}
+
+.card:nth-child(3) {
+  --color: var(--veryDarkCyan);
+}
+
+.card h1,
+.card h2 {
+  margin-top: 28px;
+  text-transform: uppercase;
+}
+
+.card p {
+  margin-top: 20px;
+}
+
+.card .button {
+  margin-top: 26px;
+}
+
+@media (min-width: 48rem) {
+  .card .button {
+    margin-top: 84px;
+  }
+}
+
+.button {
+  text-decoration: none;
+  background-color: var(--veryLightGray);
+  color: var(--color);
+  display: inline-block;
+  padding: 1rem 2rem;
+  line-height: 0.75rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--veryLightGray);
+  transition: all 0.2s ease-in-out;
+}
+
+.button:focus,
+.button:hover {
+  background-color: var(--color);
+  color: var(--veryLightGray);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  opacity: 0;
+  animation: show 0.2s ease-in-out 2s forwards;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
+}
