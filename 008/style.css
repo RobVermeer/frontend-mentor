@@ -1,0 +1,272 @@
+:root {
+  --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+  --softRed: hsl(14, 88%, 65%);
+  --softViolet: hsl(273, 75%, 66%);
+  --softBlue: hsl(240, 73%, 65%);
+  --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+  --darkGrayishBlue: hsl(240, 6%, 50%);
+  --lightGrayishBlue: hsl(240, 5%, 91%);
+  --white: hsl(0, 0%, 100%);
+  --shadow: hsla(260, 74%, 27%, 50%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--darkGrayishBlue);
+  background-image: linear-gradient(var(--softViolet), var(--softBlue));
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  color: var(--veryDarkDesaturatedBlue);
+  font-size: 2rem;
+}
+
+a {
+  color: var(--veryDarkDesaturatedBlue);
+}
+
+a:hover {
+  color: var(--softRed);
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  min-height: 100%;
+  padding: 1rem;
+  grid-template-columns: min(100%, 952px);
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 23px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  position: relative;
+  display: grid;
+  justify-content: center;
+  margin-top: 108px;
+  max-width: 400px;
+  margin-inline: auto;
+  box-shadow: 0 50px 50px 20px var(--shadow);
+}
+
+@media (min-width: 64rem) {
+  .card {
+    text-align: start;
+    justify-content: end;
+    grid-template-columns: 1fr min(46%, 400px);
+    grid-gap: 2rem;
+    max-width: none;
+    margin-top: 0;
+    margin-inline: 2rem;
+  }
+}
+
+.card-image {
+  margin-bottom: 28px;
+  margin-top: -156px;
+}
+
+.card-image img {
+  margin-inline: auto;
+}
+
+.mobile-bg {
+  margin-top: -72px;
+}
+
+img[class^='desktop'] {
+  display: none;
+}
+
+.desktop-box {
+  position: absolute;
+  left: -93px;
+  top: calc(50% - 50px);
+  z-index: 1;
+}
+
+.desktop-bg {
+  position: absolute;
+  right: 0;
+  top: -314px;
+}
+
+.desktop-woman {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 388px;
+}
+
+.desktop-illustration {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -84px;
+  display: grid;
+  place-content: center;
+}
+
+.desktop-illustration img {
+  max-width: none;
+}
+
+@media (min-width: 64rem) {
+  img[class^='mobile'] {
+    display: none;
+  }
+
+  img[class^='desktop'] {
+    display: block;
+  }
+
+  .card-image {
+    margin: 0;
+  }
+}
+
+.card h1 {
+  margin-bottom: 38px;
+}
+
+.accordion {
+  text-align: start;
+  display: grid;
+  grid-gap: 1.25rem;
+  max-width: 350px;
+}
+
+.accordion .item {
+  border-bottom: 1px solid var(--lightGrayishBlue);
+  padding-bottom: 1rem;
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+}
+
+.accordion h2 {
+  color: var(--veryDarkDesaturatedBlue);
+  font-size: 13px;
+  margin-bottom: 0.75rem;
+  padding-inline-end: 2rem;
+  font-weight: 400;
+  position: relative;
+}
+
+@media (min-width: 64rem) {
+  .accordion h2 {
+    font-size: 14px;
+  }
+}
+
+.accordion h2::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: url('./images/icon-arrow-down.svg') no-repeat center;
+  transition: transform 0.4s ease-in-out;
+}
+
+@media (min-width: 64rem) {
+  .accordion h2::before {
+    right: 1rem;
+  }
+}
+
+.accordion h2 a {
+  color: var(--veryDarkDesaturatedBlue);
+  text-decoration: none;
+}
+
+.accordion .item:not(.active) a:hover {
+  color: var(--softRed);
+}
+
+.accordion h2 a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.accordion .item:not(.active) {
+  height: 34px !important;
+}
+
+.accordion .active h2 {
+  font-weight: 700;
+}
+
+.accordion .active h2::before {
+  transform: rotateX(180deg);
+}
+
+.attribution {
+  font-size: 11px;
+  color: var(--veryDarkDesaturatedBlue);
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0;
+  animation: show 0.2s ease-in-out 2s forwards;
+}
+
+@keyframes show {
+  100% {
+    opacity: 1;
+  }
+}

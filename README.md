@@ -11,3 +11,4 @@ Frontend mentor challenges
 - [005: Stats preview card component](https://robvermeer.github.io/frontend-mentor/005/)
 - [006: 3-column preview card component](https://robvermeer.github.io/frontend-mentor/006/)
 - [007: Profile card component](https://robvermeer.github.io/frontend-mentor/007/)
+- [008: FAQ accordion card](https://robvermeer.github.io/frontend-mentor/008/)
