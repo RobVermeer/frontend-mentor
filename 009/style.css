@@ -1,0 +1,261 @@
+:root {
+  --primary: hsl(300, 43%, 22%);
+  --secondary: hsl(333, 80%, 67%);
+  --neutral-400: hsl(303, 10%, 53%);
+  --neutral-700: hsl(300, 24%, 96%);
+  --neutral-900: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--neutral-400);
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 48rem) {
+  html {
+    height: auto;
+    background: url('./images/bg-pattern-top-desktop.svg') no-repeat top left,
+      url('./images/bg-pattern-bottom-desktop.svg') no-repeat bottom right;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2rem;
+  color: var(--primary);
+}
+
+@media (min-width: 48rem) {
+  h1 {
+    font-size: 3.5rem;
+    line-height: 3rem;
+  }
+}
+
+a {
+  color: var(--secondary);
+}
+
+.main {
+  display: grid;
+  background: url('./images/bg-pattern-top-mobile.svg') no-repeat top right,
+    url('./images/bg-pattern-bottom-mobile.svg') no-repeat bottom center;
+  padding-inline: 25px;
+  text-align: center;
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+  .main {
+    background: none;
+    grid-template-columns: 1fr auto;
+    grid-gap: 2rem;
+    margin-top: 8rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .main {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.info {
+  margin-top: 5rem;
+}
+
+.intro {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+@media (min-width: 48rem) {
+  .info {
+    text-align: start;
+    margin-top: 0;
+    max-width: 450px;
+  }
+}
+
+.ratings {
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.rating {
+  background-color: var(--neutral-700);
+  color: var(--primary);
+  font-weight: 700;
+  padding: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+  justify-items: center;
+  border-radius: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (min-width: 48rem) {
+  .ratings {
+    margin-top: 0;
+    align-content: center;
+    grid-gap: 1rem 0;
+  }
+
+  .rating {
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: start;
+    grid-gap: 2rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .ratings {
+    grid-template-columns: 3rem 3rem auto 3rem 3rem;
+    max-width: 540px;
+  }
+
+  .rating {
+    justify-content: center;
+  }
+
+  .rating:nth-child(1) {
+    grid-column: 1 / 4;
+  }
+
+  .rating:nth-child(2) {
+    grid-column: 2 / 5;
+  }
+
+  .rating:nth-child(3) {
+    grid-column: 3 / 6;
+  }
+}
+
+.reviews {
+  display: grid;
+  grid-gap: 1rem;
+  margin-top: 3rem;
+}
+
+.review {
+  background-color: var(--primary);
+  color: var(--neutral-900);
+  padding: 2.5rem 2rem 2rem;
+  border-radius: 0.5rem;
+  text-align: start;
+}
+
+.review figcaption {
+  display: grid;
+  grid-template-areas: 'avatar author' 'avatar tag';
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  grid-gap: 0 1.5rem;
+  line-height: 1;
+}
+
+.review img {
+  width: 40px;
+  border-radius: 50%;
+  grid-area: avatar;
+}
+
+.review h2 {
+  font-size: 15px;
+  grid-area: author;
+}
+
+.review span {
+  color: var(--secondary);
+  grid-area: tag;
+}
+
+.review blockquote {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 48rem) {
+  .reviews {
+    grid-template-rows: 1rem 1rem auto 1rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 30px;
+    grid-column: 1 / 3;
+    margin-top: 2.5rem;
+  }
+
+  .review:nth-child(1) {
+    grid-row: 1 / 4;
+  }
+
+  .review:nth-child(2) {
+    grid-row: 2 / 5;
+  }
+
+  .review:nth-child(3) {
+    grid-row: 3 / 6;
+  }
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 11px;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 48rem) {
+  .attribution {
+    grid-column: 1 / 3;
+  }
+}
